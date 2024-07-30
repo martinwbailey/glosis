@@ -1,0 +1,73 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix nuts: <http://dd.eionet.europa.eu/vocabulary/common/nuts/> .
+@prefix iso28258: <http://w3id.org/glosis/model/iso28258/2013/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix glosis_lh: <http://w3id.org/glosis/model/layerhorizon#> .
+@prefix glosis_pr: <http://w3id.org/glosis/model/profile#> .
+@prefix glosis_sp: <http://w3id.org/glosis/model/siteplot/> .
+@prefix cap-parcel: <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+@prefix glosis_cl: <http://w3id.org/glosis/model/codelists/> .
+@prefix glosis_proc: <http://w3id.org/glosis/model/procedure#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+#site
+<http://lucas-2015/26761786/site> a glosis_sp:GL_Site ;
+rdfs:label "LUCAS #26761786" ;
+gsp:hasGeometry <http://lucas-2015/26761786/geo> ;
+gn:parentADM1 nuts:PT1 ;
+gn:parentADM3 nuts:PT150 ;
+gn:parentCountry nuts:PT ;
+gn:parentADM2 nuts:PT15 ;
+iso28258:Site.typicalProfile <http://lucas-2015/26761786/profile> .
+
+#geometry
+<http://lucas-2015/26761786/geo> a gsp:Geometry ;
+gsp:asWKT "POINT(-8.621613437 37.336764358)" .
+
+#profile
+<http://lucas-2015/26761786/profile> a glosis_pr:GL_Profile ;
+rdfs:label "Profile for #26761786" ;
+iso28258:Profile.element <http://lucas-2015/26761786/layer> .
+
+#layer
+<http://lucas-2015/26761786/layer> a glosis_lh:GL_Layer ;
+rdfs:label "Layer for #26761786" .
+
+#site observation
+<http://lucas-2015/26761786/lu> a glosis_sp:LandUseClass ;
+rdfs:label "Land use for #26761786" ;
+sosa:hasFeatureOfInterest <http://lucas-2015/26761786/site> ;
+sosa:hasResult <http://w3id.org/glosis/model/codelists/landUseClassValueCode-M> ;
+sosa:observedProperty glosis_sp:landUseClassProperty .
+
+#layer ph observations
+<http://lucas-2015/26761786/phCaCl2> a glosis_lh:PH ;
+rdfs:label "pH in CaCl2 for #26761786" ;
+sosa:hasFeatureOfInterest <http://lucas-2015/26761786/layer> ;
+sosa:hasResult <http://lucas-2015/26761786/phCaCl2_value> ;
+sosa:observedProperty glosis_cl:physioChemicalPropertyCode-pH ;
+sosa:usedProcedure glosis_proc:pHProcedure-pHCaCl2 .
+
+#ph value
+<http://lucas-2015/26761786/phCaCl2_value> a glosis_lh:PHValue ;
+rdfs:label "pH in CaCl2 value for #26761786" ;
+qudt:numericValue "4.30"^^xsd:float ;
+qudt:unit unit:PH .
+
+#layer electrical conductivity
+<http://lucas-2015/26761786/ec> a glosis_lh:ElectricalConductivity ;
+rdfs:label "EC for #26761786" ;
+sosa:hasFeatureOfInterest <http://lucas-2015/26761786/layer> ;
+sosa:hasResult <http://lucas-2015/26761786/ec_value> ;
+sosa:observedProperty glosis_lh:electricalConductivityProperty .
+
+#electrical conductivity value
+<http://lucas-2015/26761786/ec_value> a glosis_lh:ElectricalConductivityValue ;
+rdfs:label "EC value for #26761786" ;
+qudt:numericValue "4.38"^^xsd:float ;
+qudt:unit unit:MilliS-PER-M .
