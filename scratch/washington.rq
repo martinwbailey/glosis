@@ -1,0 +1,10 @@
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ex: <http://www.example.org/POI#>
+SELECT ?m ?p
+WHERE {
+	?m a ex:Monument ;
+		geo:hasGeometry ?mgeo .
+	?p a ex:Park ;
+		geo:hasGeometry ?pgeo .
+	?mgeo geo:sfWithin ?pgeo .
+}

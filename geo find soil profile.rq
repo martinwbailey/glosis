@@ -1,0 +1,9 @@
+PREFIX my: <http://lucas-2015-topsoil/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+
+SELECT ?f
+WHERE {
+   ?f geo:hasGeometry ?fGeom .
+   ?fGeom geo:sfWithin '''POLYGON ((-9.077454 37.009133, -9.077454 37.55982, -8.275452 37.55982, -8.275452 37.009133, -9.077454 37.009133))'''^^geo:wktLiteral
+}
