@@ -1,4 +1,4 @@
-BASE <http://soilhive.ag/lucas2015/>
+BASE <http://soilhive.ag/datasets/lucas2015/>
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
