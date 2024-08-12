@@ -1,0 +1,147 @@
+GET data-sp-lucas2015-idx.1/_search
+{
+  "query": {
+      "term": {
+        "pointid" : 26601978
+      }
+  }
+}
+
+{
+    "took": 0,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": 1,
+      "hits": [
+        {
+          "_index": "data-sp-lucas2015-idx.1",
+          "_id": "kjPDl48B7zvys_uKgteo",
+          "_score": 1,
+          "_source": {
+            "location": "POINT (-9.282250124 38.982827458)",
+            "inserted": 1716238028534,
+            "pointid": 26601978,
+            "sampling_date": 2015,
+            "properties": {
+              "CF": [
+                {
+                  "original": "Coarse",
+                  "unit": "%",
+                  "depth": {
+                    "0-20": "nan"
+                  }
+                }
+              ],
+              "clay": [
+                {
+                  "original": "clay",
+                  "unit": "%",
+                  "depth": {
+                    "0-20": "nan"
+                  }
+                }
+              ],
+              "sand": [
+                {
+                  "original": "sand",
+                  "unit": "%",
+                  "depth": {
+                    "0-20": "nan"
+                  }
+                }
+              ],
+              "silt": [
+                {
+                  "original": "silt",
+                  "unit": "%",
+                  "depth": {
+                    "0-20": "nan"
+                  }
+                }
+              ],
+              "pH": [
+                {
+                  "original": "pH_CaCl2",
+                  "unit": "",
+                  "depth": {
+                    "0-20": "7.1"
+                  }
+                },
+                {
+                  "original": "pH_H20",
+                  "unit": "",
+                  "depth": {
+                    "0-20": "7.38"
+                  }
+                }
+              ],
+              "occ": [
+                {
+                  "original": "OC",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "25.2"
+                  }
+                }
+              ],
+              "CaCO3": [
+                {
+                  "original": "CaCO3",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "<LOD"
+                  }
+                }
+              ],
+              "N": [
+                {
+                  "original": "N_total",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "2.1"
+                  }
+                }
+              ],
+              "P": [
+                {
+                  "original": "P_extractable",
+                  "unit": "mg/kg",
+                  "depth": {
+                    "0-20": "7.2"
+                  }
+                }
+              ],
+              "K": [
+                {
+                  "original": "K_extractable",
+                  "unit": "mg/kg",
+                  "depth": {
+                    "0-20": "174.6"
+                  }
+                }
+              ],
+              "EC": [
+                {
+                  "original": "EC",
+                  "unit": "mS/m",
+                  "depth": {
+                    "0-20": "21.6"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }

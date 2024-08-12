@@ -1,0 +1,56 @@
+PREFIX glosis_sp: <http://w3id.org/glosis/model/spatialobject#>
+PREFIX glosis_cl: <http://w3id.org/glosis/model/codelists#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Base URI for the generated RDF
+BASE <http://example.org/soil/>
+
+CONSTRUCT {
+  ?sample a glosis_sp:Sample ;
+          glosis_sp:location ?location ;
+          glosis_sp:altitude ?altitude ;
+          glosis_cl:SoilTypeCode ?soilType ;
+          glosis_sp:pH ?pH ;
+          glosis_sp:soilMoistureContent ?moistureContent ;
+          glosis_sp:organicCarbonContent ?organicCarbon ;
+          glosis_sp:bulkDensity ?bulkDensity ;
+          glosis_cl:SoilTextureCode ?texture ;
+          glosis_sp:cationExchangeCapacity ?cec ;
+          glosis_sp:totalNitrogenContent ?totalNitrogen ;
+          glosis_sp:availablePhosphorusContent ?availablePhosphorus ;
+          glosis_sp:availablePotassiumContent ?availablePotassium ;
+          glosis_sp:timestamp ?samplingDate ;
+          glosis_cl:LandUseCode ?landUse ;
+          glosis_sp:slope ?slope ;
+          glosis_sp:annualPrecipitation ?rainfall ;
+          glosis_sp:meanAnnualTemperature ?temperature ;
+          glosis_cl:VegetationCoverCode ?vegetationCover .
+          
+  ?location a geo:Point ;
+            geo:lat ?latitude ;
+            geo:long ?longitude .
+}
+WHERE {
+  # Bindings from the CSV file
+  BIND(IRI(CONCAT(STR(<http://example.org/soil/sample/>), ?Sample_ID)) AS ?sample)
+  BIND(STRDT(?Latitude, xsd:decimal) AS ?latitude)
+  BIND(STRDT(?Longitude, xsd:decimal) AS ?longitude)
+  BIND(STRDT(?Elevation, xsd:decimal) AS ?altitude)
+  BIND(STR(?Soil_Type) AS ?soilType)
+  BIND(STRDT(?pH, xsd:decimal) AS ?pH)
+  BIND(STRDT(?Moisture_Content, xsd:decimal) AS ?moistureContent)
+  BIND(STRDT(?Organic_Carbon, xsd:decimal) AS ?organicCarbon)
+  BIND(STRDT(?Bulk_Density, xsd:decimal) AS ?bulkDensity)
+  BIND(STR(?Texture) AS ?texture)
+  BIND(STRDT(?Cation_Exchange_Capacity, xsd:decimal) AS ?cec)
+  BIND(STRDT(?Total_Nitrogen, xsd:decimal) AS ?totalNitrogen)
+  BIND(STRDT(?Available_Phosphorus, xsd:decimal) AS ?availablePhosphorus)
+  BIND(STRDT(?Available_Potassium, xsd:decimal) AS ?availablePotassium)
+  BIND(STRDT(?Sampling_Date, xsd:date) AS ?samplingDate)
+  BIND(STR(?Land_Use) AS ?landUse)
+  BIND(STRDT(?Slope, xsd:decimal) AS ?slope)
+  BIND(STRDT(?Rainfall, xsd:decimal) AS ?rainfall)
+  BIND(STRDT(?Temperature, xsd:decimal) AS ?temperature)
+  BIND(STR(?Vegetation_Cover) AS ?vegetationCover)
+}
