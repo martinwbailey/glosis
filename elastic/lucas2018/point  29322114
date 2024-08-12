@@ -1,0 +1,120 @@
+GET data-sp-lucas2018-idx.1/_search
+{
+  "query": {
+      "term": {
+        "point_id" : 29322114
+      }
+  }
+}
+
+{
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": 1,
+      "hits": [
+        {
+          "_index": "data-sp-lucas2018-idx.1",
+          "_id": "_QiUopAB7uPzlzAE8Q6n",
+          "_score": 1,
+          "_source": {
+            "location": "POINT (-6.520030077 40.75278835)",
+            "inserted": 1720714578530,
+            "point_id": 29322114,
+            "sampling_date": 2018,
+            "properties": {
+              "pH": [
+                {
+                  "original": "ph_cacl2",
+                  "unit": "",
+                  "depth": {
+                    "0-20": "4.4"
+                  }
+                },
+                {
+                  "original": "ph_h2o",
+                  "unit": "",
+                  "depth": {
+                    "0-20": "5.29"
+                  }
+                }
+              ],
+              "EC": [
+                {
+                  "original": "ec",
+                  "unit": "mS/m",
+                  "depth": {
+                    "0-20": "4.14"
+                  }
+                }
+              ],
+              "occ": [
+                {
+                  "original": "oc",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "15.8"
+                  }
+                }
+              ],
+              "CaCO3": [
+                {
+                  "original": "caco3",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "1"
+                  }
+                }
+              ],
+              "P": [
+                {
+                  "original": "P_extractable",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "< LOD"
+                  }
+                }
+              ],
+              "N": [
+                {
+                  "original": "N_total",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "1.7"
+                  }
+                }
+              ],
+              "K": [
+                {
+                  "original": "K_extractable",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "92.1"
+                  }
+                }
+              ],
+              "BD": [
+                {
+                  "original": "bdod",
+                  "unit": "g/kg",
+                  "depth": {
+                    "0-20": "NA"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }

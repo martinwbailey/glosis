@@ -26,6 +26,7 @@ gn:parentCountry nuts:PT ;
 gn:parentADM2 nuts:PT15 ;
 iso28258:Site.typicalProfile <26761786/profile> .
 
+
 #geometry
 <26761786/geo> a gsp:Geometry ;
 gsp:asWKT "POINT(-8.621613437 37.336764358)" .
