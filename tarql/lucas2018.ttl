@@ -1,0 +1,36 @@
+@prefix glosis_cl:  <http://w3id.org/glosis/model/codelists/> .
+@prefix qudt:  <http://qudt.org/schema/qudt/> .
+@prefix gsp:  <http://www.opengis.net/ont/geosparql#> .
+@prefix iso28258:  <http://w3id.org/glosis/model/iso28258/2013/> .
+@prefix gn:  <http://www.geonames.org/ontology#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix glosis_proc:  <http://w3id.org/glosis/model/procedure#> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix nuts:  <http://dd.eionet.europa.eu/vocabulary/common/nuts/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix glosis_pr:  <http://w3id.org/glosis/model/profile#> .
+@prefix glosis_sp:  <http://w3id.org/glosis/model/siteplot/> .
+@prefix glosis_lh:  <http://w3id.org/glosis/model/layerhorizon#> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix cap-parcel:  <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
+
+<https://soilhive.ag/LUCAS/topsoil/47862690/site>
+        rdf:type       glosis_sp:GL_Site ;
+        rdfs:label     "LUCAS #47862690" ;
+        gn:parentADM1  nuts:AT .
+
+<https://soilhive.ag/LUCAS/topsoil/47882704/site>
+        rdf:type       glosis_sp:GL_Site ;
+        rdfs:label     "LUCAS #47882704" ;
+        gn:parentADM1  nuts:AT .
+
+<https://soilhive.ag/LUCAS/topsoil/47982688/site>
+        rdf:type       glosis_sp:GL_Site ;
+        rdfs:label     "LUCAS #47982688" ;
+        gn:parentADM1  nuts:AT .
+
+<https://soilhive.ag/LUCAS/topsoil/48022702/site>
+        rdf:type       glosis_sp:GL_Site ;
+        rdfs:label     "LUCAS #48022702" ;
+        gn:parentADM1  nuts:AT .

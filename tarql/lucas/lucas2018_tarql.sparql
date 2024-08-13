@@ -1,4 +1,4 @@
-BASE <https://soilhive.ag/datasets/lucas/>
+BASE <https://soilhive.ag/LUCAS/topsoil/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX gn: <http://www.geonames.org/ontology#>
@@ -18,8 +18,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
   ?URI a glosis_sp:GL_Site;
+  rdfs:label ?label;
+  gn:parentADM1 ?parentadm1;
+  gn:parentADM2 ?parentadm2;  
+  gn:parentADM3 ?parentadm3;
+  gn:parentADM3 ?parentadm4 .
 } 
 FROM <> 
 WHERE {
   BIND (URI(CONCAT(?POINTID, '/site' )) AS ?URI)
+  BIND (CONCAT("LUCAS #", STR(?POINTID)) AS ?label)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_0)) AS ?parentadm1)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_1)) AS ?parentadm2)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_2)) AS ?parentadm3)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_3)) AS ?parentadm4)
 }
+LIMIT 5
