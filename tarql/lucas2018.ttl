@@ -16,21 +16,116 @@
 @prefix cap-parcel:  <http://lpis.ec.europa.eu/registry/applicationschema/cap-iacs-parcel#> .
 
 <https://soilhive.ag/LUCAS/topsoil/47862690/site>
-        rdf:type       glosis_sp:GL_Site ;
-        rdfs:label     "LUCAS #47862690" ;
-        gn:parentADM1  nuts:AT .
+        rdf:type                      glosis_sp:GL_Site ;
+        rdfs:label                    "Site for LUCAS #47862690" ;
+        gsp:hasGeometry               <https://soilhive.ag/LUCAS/topsoil/47862690/geometry> ;
+        gn:parentADM1                 nuts:AT ;
+        gn:parentADM2                 nuts:AT1 ;
+        gn:parentADM3                 nuts:AT11 ;
+        gn:parentADM3                 nuts:AT113 ;
+        iso28258:Site.typicalProfile  <https://soilhive.ag/LUCAS/topsoil/47862690/profile> .
+
+<https://soilhive.ag/LUCAS/topsoil/47862690/profile>
+        rdf:type                  glosis_pr:GL_Profile ;
+        rdfs:label                "Profile for LUCAS #47862690" ;
+        iso28258:Profile.element  <https://soilhive.ag/LUCAS/topsoil/47862690/layer> .
+
+<https://soilhive.ag/LUCAS/topsoil/47862690/geometry>
+        rdf:type   gsp:Geometry ;
+        gsp:asWKT  "POINT(16.13421178 47.15023795)" .
+
+<https://soilhive.ag/LUCAS/topsoil/47862690/layer>
+        rdf:type    glosis_lh:GL_Layer ;
+        rdfs:label  "Layer for LUCAS #47862690" .
 
 <https://soilhive.ag/LUCAS/topsoil/47882704/site>
-        rdf:type       glosis_sp:GL_Site ;
-        rdfs:label     "LUCAS #47882704" ;
-        gn:parentADM1  nuts:AT .
+        rdf:type                      glosis_sp:GL_Site ;
+        rdfs:label                    "Site for LUCAS #47882704" ;
+        gsp:hasGeometry               <https://soilhive.ag/LUCAS/topsoil/47882704/geometry> ;
+        gn:parentADM1                 nuts:AT ;
+        gn:parentADM2                 nuts:AT1 ;
+        gn:parentADM3                 nuts:AT11 ;
+        gn:parentADM3                 nuts:AT113 ;
+        iso28258:Site.typicalProfile  <https://soilhive.ag/LUCAS/topsoil/47882704/profile> .
+
+<https://soilhive.ag/LUCAS/topsoil/47882704/profile>
+        rdf:type                  glosis_pr:GL_Profile ;
+        rdfs:label                "Profile for LUCAS #47882704" ;
+        iso28258:Profile.element  <https://soilhive.ag/LUCAS/topsoil/47882704/layer> .
+
+<https://soilhive.ag/LUCAS/topsoil/47882704/geometry>
+        rdf:type   gsp:Geometry ;
+        gsp:asWKT  "POINT(16.17535859 47.27427248)" .
+
+<https://soilhive.ag/LUCAS/topsoil/47882704/layer>
+        rdf:type    glosis_lh:GL_Layer ;
+        rdfs:label  "Layer for LUCAS #47882704" .
 
 <https://soilhive.ag/LUCAS/topsoil/47982688/site>
-        rdf:type       glosis_sp:GL_Site ;
-        rdfs:label     "LUCAS #47982688" ;
-        gn:parentADM1  nuts:AT .
+        rdf:type                      glosis_sp:GL_Site ;
+        rdfs:label                    "Site for LUCAS #47982688" ;
+        gsp:hasGeometry               <https://soilhive.ag/LUCAS/topsoil/47982688/geometry> ;
+        gn:parentADM1                 nuts:AT ;
+        gn:parentADM2                 nuts:AT1 ;
+        gn:parentADM3                 nuts:AT11 ;
+        gn:parentADM3                 nuts:AT113 ;
+        iso28258:Site.typicalProfile  <https://soilhive.ag/LUCAS/topsoil/47982688/profile> .
+
+<https://soilhive.ag/LUCAS/topsoil/47982688/profile>
+        rdf:type                  glosis_pr:GL_Profile ;
+        rdfs:label                "Profile for LUCAS #47982688" ;
+        iso28258:Profile.element  <https://soilhive.ag/LUCAS/topsoil/47982688/layer> .
+
+<https://soilhive.ag/LUCAS/topsoil/47982688/geometry>
+        rdf:type   gsp:Geometry ;
+        gsp:asWKT  "POINT(16.28969291 47.1232602)" .
+
+<https://soilhive.ag/LUCAS/topsoil/47982688/layer>
+        rdf:type    glosis_lh:GL_Layer ;
+        rdfs:label  "Layer for LUCAS #47982688" .
 
 <https://soilhive.ag/LUCAS/topsoil/48022702/site>
-        rdf:type       glosis_sp:GL_Site ;
-        rdfs:label     "LUCAS #48022702" ;
-        gn:parentADM1  nuts:AT .
+        rdf:type                      glosis_sp:GL_Site ;
+        rdfs:label                    "Site for LUCAS #48022702" ;
+        gsp:hasGeometry               <https://soilhive.ag/LUCAS/topsoil/48022702/geometry> ;
+        gn:parentADM1                 nuts:AT ;
+        gn:parentADM2                 nuts:AT1 ;
+        gn:parentADM3                 nuts:AT11 ;
+        gn:parentADM3                 nuts:AT113 ;
+        iso28258:Site.typicalProfile  <https://soilhive.ag/LUCAS/topsoil/48022702/profile> .
+
+<https://soilhive.ag/LUCAS/topsoil/48022702/profile>
+        rdf:type                  glosis_pr:GL_Profile ;
+        rdfs:label                "Profile for LUCAS #48022702" ;
+        iso28258:Profile.element  <https://soilhive.ag/LUCAS/topsoil/48022702/layer> .
+
+<https://soilhive.ag/LUCAS/topsoil/48022702/geometry>
+        rdf:type   gsp:Geometry ;
+        gsp:asWKT  "POINT(16.35750603 47.24569335)" .
+
+<https://soilhive.ag/LUCAS/topsoil/48022702/layer>
+        rdf:type    glosis_lh:GL_Layer ;
+        rdfs:label  "Layer for LUCAS #48022702" .
+
+<https://soilhive.ag/LUCAS/topsoil/48062708/site>
+        rdf:type                      glosis_sp:GL_Site ;
+        rdfs:label                    "Site for LUCAS #48062708" ;
+        gsp:hasGeometry               <https://soilhive.ag/LUCAS/topsoil/48062708/geometry> ;
+        gn:parentADM1                 nuts:AT ;
+        gn:parentADM2                 nuts:AT1 ;
+        gn:parentADM3                 nuts:AT11 ;
+        gn:parentADM3                 nuts:AT113 ;
+        iso28258:Site.typicalProfile  <https://soilhive.ag/LUCAS/topsoil/48062708/profile> .
+
+<https://soilhive.ag/LUCAS/topsoil/48062708/profile>
+        rdf:type                  glosis_pr:GL_Profile ;
+        rdfs:label                "Profile for LUCAS #48062708" ;
+        iso28258:Profile.element  <https://soilhive.ag/LUCAS/topsoil/48062708/layer> .
+
+<https://soilhive.ag/LUCAS/topsoil/48062708/geometry>
+        rdf:type   gsp:Geometry ;
+        gsp:asWKT  "POINT(16.41678159 47.29637182)" .
+
+<https://soilhive.ag/LUCAS/topsoil/48062708/layer>
+        rdf:type    glosis_lh:GL_Layer ;
+        rdfs:label  "Layer for LUCAS #48062708" .

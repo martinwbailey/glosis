@@ -17,20 +17,43 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?URI a glosis_sp:GL_Site;
-  rdfs:label ?label;
-  gn:parentADM1 ?parentadm1;
-  gn:parentADM2 ?parentadm2;  
-  gn:parentADM3 ?parentadm3;
-  gn:parentADM3 ?parentadm4 .
+  #site
+  ?siteURI a glosis_sp:GL_Site;
+  rdfs:label ?siteLabel;
+  gsp:hasGeometry ?geometryURI ;
+  gn:parentADM1 ?parentAdm1;
+  gn:parentADM2 ?parentAdm2;  
+  gn:parentADM3 ?parentAdm3;
+  gn:parentADM3 ?parentAdm4;
+  iso28258:Site.typicalProfile ?profileURI .
+
+  #profile
+  ?profileURI a glosis_pr:GL_Profile ;
+  rdfs:label ?profileLabel ;
+  iso28258:Profile.element ?layerURI .
+
+  #geometry
+  ?geometryURI a gsp:Geometry ;
+  gsp:asWKT ?wktPoint .
+
+  #layer, todo: apply unique identifier to layer within a profile
+  ?layerURI a glosis_lh:GL_Layer ;
+  rdfs:label ?layerLabel .
+
 } 
 FROM <> 
 WHERE {
-  BIND (URI(CONCAT(?POINTID, '/site' )) AS ?URI)
-  BIND (CONCAT("LUCAS #", STR(?POINTID)) AS ?label)
-  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_0)) AS ?parentadm1)
-  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_1)) AS ?parentadm2)
-  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_2)) AS ?parentadm3)
-  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_3)) AS ?parentadm4)
+  BIND (URI(CONCAT(?POINTID, '/site' )) AS ?siteURI)
+  BIND (URI(CONCAT(?POINTID, '/profile' )) AS ?profileURI)
+  BIND (URI(CONCAT(?POINTID, '/geometry' )) AS ?geometryURI)
+  BIND (URI(CONCAT(?POINTID, '/layer/', REPLACE(?Depth, " cm", "") )) AS ?layerURI)
+  BIND (CONCAT("Site for LUCAS #", STR(?POINTID)) AS ?siteLabel)
+  BIND (CONCAT("Profile for LUCAS #", STR(?POINTID)) AS ?profileLabel)
+  BIND (CONCAT("Layer ", ?Depth,  " for LUCAS #",STR(?POINTID)) AS ?layerLabel)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_0)) AS ?parentAdm1)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_1)) AS ?parentAdm2)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_2)) AS ?parentAdm3)
+  BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_3)) AS ?parentAdm4)
+  BIND (CONCAT("POINT(", STR(?TH_LONG)," ", STR(?TH_LAT), ")") AS ?wktPoint)
 }
 LIMIT 5
