@@ -44,6 +44,7 @@ CONSTRUCT {
   ?landuseURI a glosis_sp:LandUseClass ;
   rdfs:label ?LU ;
   rdfs:label ?LU1_Desc ;
+  rdfs:label ?lu_3char ;
   sosa:hasFeatureOfInterest ?siteURI ;
   sosa:hasResult ?glosis_lu;
   sosa:observedProperty glosis_sp:landUseClassProperty .
@@ -65,12 +66,13 @@ WHERE {
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_2)) AS ?parentAdm3)
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_3)) AS ?parentAdm4)
   BIND (CONCAT("POINT(", STR(?TH_LONG)," ", STR(?TH_LAT), ")") AS ?wktPoint)
+  BIND(SUBSTR(?LU,1,3) AS ?lu_3char)
 
 
   OPTIONAL{
-     VALUES (?LU ?glosis_lu) {
-      ( "U120" "mapping for U120")
-      ( "U111" "mapping for U111")
+     VALUES (?lu_3char ?glosis_lu) {
+      ( "U12" glosis_cl:landUseClassValueCode-F)
+      ( "U11" glosis_cl:landUseClassValueCode-M)
     }
   }
 
