@@ -40,6 +40,14 @@ CONSTRUCT {
   ?layerURI a glosis_lh:GL_Layer ;
   rdfs:label ?layerLabel .
 
+  #site observation
+  ?landuseURI a glosis_sp:LandUseClass ;
+  rdfs:label ?LU ;
+  rdfs:label ?LU1_Desc ;
+  sosa:hasFeatureOfInterest ?siteURI ;
+  sosa:hasResult ?glosis_lu;
+  sosa:observedProperty glosis_sp:landUseClassProperty .
+
 } 
 FROM <> 
 WHERE {
@@ -47,13 +55,24 @@ WHERE {
   BIND (URI(CONCAT(?POINTID, '/profile' )) AS ?profileURI)
   BIND (URI(CONCAT(?POINTID, '/geometry' )) AS ?geometryURI)
   BIND (URI(CONCAT(?POINTID, '/layer/', REPLACE(?Depth, " cm", "") )) AS ?layerURI)
+  BIND (URI(CONCAT(?POINTID, '/landuse' )) AS ?landuseURI)
   BIND (CONCAT("Site for LUCAS #", STR(?POINTID)) AS ?siteLabel)
   BIND (CONCAT("Profile for LUCAS #", STR(?POINTID)) AS ?profileLabel)
   BIND (CONCAT("Layer ", ?Depth,  " for LUCAS #",STR(?POINTID)) AS ?layerLabel)
+  BIND (CONCAT("Land use for LUCAS #", STR(?POINTID)) AS ?landuseLabel)
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_0)) AS ?parentAdm1)
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_1)) AS ?parentAdm2)
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_2)) AS ?parentAdm3)
   BIND (IRI(CONCAT("http://dd.eionet.europa.eu/vocabulary/common/nuts/", ?NUTS_3)) AS ?parentAdm4)
   BIND (CONCAT("POINT(", STR(?TH_LONG)," ", STR(?TH_LAT), ")") AS ?wktPoint)
+
+
+  OPTIONAL{
+     VALUES (?LU ?glosis_lu) {
+      ( "U120" "mapping for U120")
+      ( "U111" "mapping for U111")
+    }
+  }
+
 }
-LIMIT 5
+# LIMIT 1
